@@ -4,18 +4,20 @@ using UnityEngine;
 
 public class BuildingManager : MonoBehaviour {
 
-    [SerializeField] private Transform pfWoodHarvester; //木材实例预制体
+    [SerializeField] private BuildingTypeSO buildingType; //建筑体类型实例
 
-    private Camera mainCamera;                          //获取到主摄像机实例
-
+    private Camera mainCamera;   //获取到主摄像机实例
+   
     private void Start() {
-        mainCamera = Camera.main;  
+        mainCamera = Camera.main;
+
+        Debug.Log(Resources.Load<BuildingTypeListSO>("BuildingTypeList"));
     }
 
     private void Update() {
         
         if (Input.GetMouseButtonDown(0)) {
-            Instantiate(pfWoodHarvester, GetMouseWorldPosition(), Quaternion.identity);
+            Instantiate(buildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
         }
 
     }
