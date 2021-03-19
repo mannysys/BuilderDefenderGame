@@ -1,17 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/**
+ * 管理建筑类型数据资源
+ */
 public class BuildingManager : MonoBehaviour {
 
-    [SerializeField] private BuildingTypeSO buildingType; //建筑体类型实例
+    //获取到主摄像机实例
+    private Camera mainCamera;
+    //建筑资源实例（石头、木头等）的集合
+    private BuildingTypeListSO buildingTypeList;
+    //当前建筑资源实例
+    private BuildingTypeSO buildingType;
 
-    private Camera mainCamera;   //获取到主摄像机实例
-   
+    private void Awake() {
+        //加载建筑类型数据资源集合
+        buildingTypeList = Resources.Load<BuildingTypeListSO>(typeof(BuildingTypeListSO).Name);
+        buildingType = buildingTypeList.list[0];
+    }
     private void Start() {
         mainCamera = Camera.main;
-
-        Debug.Log(Resources.Load<BuildingTypeListSO>("BuildingTypeList"));
     }
 
     private void Update() {
@@ -20,6 +28,12 @@ public class BuildingManager : MonoBehaviour {
             Instantiate(buildingType.prefab, GetMouseWorldPosition(), Quaternion.identity);
         }
 
+        if (Input.GetKeyDown(KeyCode.T)) {
+            buildingType = buildingTypeList.list[0];
+        }   
+        if (Input.GetKeyDown(KeyCode.Y)) {
+            buildingType = buildingTypeList.list[1];
+        }
     }
 
     //获取一个鼠标位置坐标
