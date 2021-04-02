@@ -91,6 +91,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3310176234077253693}
   - component: {fileID: -1413001063554691664}
+  - component: {fileID: 6729085207876307026}
   m_Layer: 0
   m_Name: pfStoneHarvester
   m_TagString: Untagged
@@ -125,3 +126,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7d6154405fdb3a4dbf5c7b0c4208e18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6729085207876307026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3310176234077253690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8adeb46ace38b499fd77edb6a60f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buildingType: {fileID: 11400000, guid: 62372efc3f9de584291c90f815020902, type: 2}
