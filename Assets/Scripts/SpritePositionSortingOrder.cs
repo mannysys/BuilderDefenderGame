@@ -29,6 +29,9 @@ public class SpritePositionSortingOrder : MonoBehaviour {
             //销毁该脚本组件（只运行一次）
             Destroy(this);
         }
+        
+        
+
     }
 
 

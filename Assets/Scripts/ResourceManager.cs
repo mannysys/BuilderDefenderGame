@@ -28,15 +28,13 @@ public class ResourceManager : MonoBehaviour {
         foreach(ResourceTypeSO resourceType in resourceTypeList.list) {
             resourceAmountDictionary[resourceType] = 0;
         }
-
-        TestLogResourceAmountDictionary();
     }
 
     private void Update() {
         if(Input.GetKeyDown(KeyCode.T)) {
             ResourceTypeListSO resourceTypeList = Resources.Load<ResourceTypeListSO>(typeof(ResourceTypeListSO).Name);
             AddResource(resourceTypeList.list[0], 2);
-            TestLogResourceAmountDictionary();
+            //TestLogResourceAmountDictionary();
         }
     }
 
@@ -57,8 +55,6 @@ public class ResourceManager : MonoBehaviour {
          * Invoke 事件重复调用
          */
         OnResourceAmountChanged?.Invoke(this, EventArgs.Empty);
-
-        TestLogResourceAmountDictionary();
     }
 
     //根据资源类型名称，返回资源在map 中的对应的资源数值

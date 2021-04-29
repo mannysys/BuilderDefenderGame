@@ -15,7 +15,10 @@ public class BuildingGhost : MonoBehaviour
         Hide();
     }
     private void Start() {
-        //订阅自定义事件
+        /*
+         * 订阅监听建筑体管理脚本中的，自定义事件
+         * += 加等于表示新增一个监听函数，-= 减等于表示删除一个新增的监听函数 
+         */
         BuildingManager.Instance.OnActiveBuildingTypeChanged += BuildingManager_OnActiveBuildingTypeChanged;
     }
    

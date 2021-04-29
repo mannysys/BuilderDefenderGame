@@ -14,6 +14,7 @@ public class BuildingManager : MonoBehaviour {
     //声明一个自定义事件
     public event EventHandler<OnActiveBuildingTypeChangedEventArgs> OnActiveBuildingTypeChanged;
 
+    //自定义事件返回一个自定义类的属性类型
     public class OnActiveBuildingTypeChangedEventArgs : EventArgs {
         public BuildingTypeSO activeBuildingType;
     }
@@ -60,7 +61,10 @@ public class BuildingManager : MonoBehaviour {
     public void SetActiveBuildingType(BuildingTypeSO buildingType) {
         activeBuildingType = buildingType;
 
-        //同步执行自定义事件
+
+        /*
+         * 检查所有脚本中是否有脚本监听该事件，如果有则广播自定义的事件
+         */
         OnActiveBuildingTypeChanged?.Invoke(this, 
             new OnActiveBuildingTypeChangedEventArgs { activeBuildingType = activeBuildingType }
         );

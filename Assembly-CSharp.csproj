@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\ResourceGenerator.cs" />
     <Compile Include="Assets\Scripts\ResourceGeneratorData.cs" />
     <Compile Include="Assets\Scripts\ResourceManager.cs" />
+    <Compile Include="Assets\Scripts\ResourceNode.cs" />
     <Compile Include="Assets\Scripts\ResourceTypeListSO.cs" />
     <Compile Include="Assets\Scripts\ResourceTypeSO.cs" />
     <Compile Include="Assets\Scripts\ResourcesUI.cs" />
